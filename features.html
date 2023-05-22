@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>iCeee</title>
+        <link rel="icon" type="image/png" href="images/png/logo-only.png"/>
+        <meta charset="utf-8"/>
+        <meta name="author" content="Hoang Minh Khue"/>
+        <meta name="description" content="Icecream_shop ice cream iceee"/>
+        <meta name="source" content="https://www.sweetlifedesserts.com/"/>
+        <meta name="keyword" content="ice cream shop"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="css/style.css"/>
+    </head>
+    <body>
+        <!-- js code for fade-in effect when the page load -->
+        <script src="js/fadeInEffect.js"></script>
+        <header id="header">
+            <a id="logo">
+                <img src="images/png/logo-no-background.png" alt=""/>
+            </a>
+            <div class="nav-container">
+                <label id='expand-btn' for='openclose'>
+                    <img src='images/menu.svg' alt=''/>
+                </label>
+                <input type='checkbox' name='openclose' id='openclose'/>
+                <nav id="nav">
+                    <!-- use js function instead of href for <a></a> tag to make fade-out effect  -->
+                    <a class="nav-item" onclick="fadeOutEffect('index.html')">home</a>
+                    <a class="nav-item" onclick="fadeOutEffect('register.html')">register</a>
+                    <a class="nav-item" onclick="fadeOutEffect('order.html')">order</a>
+                    <a class="nav-item active" onclick="fadeOutEffect('features.html')">Features</a>
+                </nav>
+            </div>
+        </header>
+        <main>
+            <div id="feature-container">
+                <div id="feature-header">
+                    <a class="feature-btn" id="fea1" onclick="fadeOutEffect('index.html')">
+                        <h1>Feature 1</h1>
+                    </a>
+                    <a class="feature-btn" id="fea2" onclick="fadeOutEffect('index.html')">
+                        <h1>Feature 2</h1>
+                    </a>
+                    <a class="feature-btn" id="fea3" onclick="fadeOutEffect('index.html')">
+                        <h1>Feature 3</h1>
+                    </a>
+                </div>
+                <div id="feature-content">
+                    <div class="feature-desc" id="fea1-content">
+                        <h2>Banner animations</h2>
+                        <video controls>
+                            <source src="videos/banner.mp4" type="video/mp4"/>
+                            Your browser does not support video.
+                        </video>
+                        <p class="description">
+                            <strong>Feature description: </strong>
+                        </p>
+                        <ol>
+                            <li>The banner at the top of the home page has many auto animations as well as on-event animations.</li>
+                            <li>The images will change to another after a few seconds. When it is changing there is a darken effect to make the transition smoother.</li>
+                            <li>The duplicate and dimmed image as the background image can moves in the opposite direction with the mouse.</li>
+                        </ol>
+                        <p class="description">
+                            <strong>HTML code: </strong>
+                        </p>
+                        <pre class="code"><code class="language-html">
+                            &gt;div id="banner-space"$lt;$gt;/div$lt;   
+                            $gt;div id="banner"$lt;
+                                $gt;!-- buttons to change banner images  --$lt;
+                                $gt;button class="banner-btn" id="left-btn" onclick="prevImg(true)"$lt;&lt;$gt;/button$lt;
+                                $gt;button class="banner-btn" id="right-btn" onclick="nextImg(true)"$lt;&gt;$gt;/button$lt;
+                                $gt;img src="images/banner/banner1.jpg" id="bg-banner-img" alt=""/$lt;
+                                $gt;img src="images/banner/banner1.jpg" id="banner-img" alt=""/$lt;
+                                $gt;div id="slogans"$lt;
+                                    $gt;h1$lt;Your smile are as sweet as our ice cream &hearts;$gt;/h1$lt;
+                                    
+                                $gt;/div$lt;
+                                $gt;img id="signature" src="images/signature.png" alt=""/$lt;
+                            $gt;/div$lt;
+                        </code></pre>
+                        <p class="description">
+                            <strong>CSS code: </strong>
+                        </p>
+                        
+                        <pre class="code"><code class="language-css">
+                            div {
+                                z-index: 1;
+                                position: relative;
+                            }
+                            
+                            #banner {
+                                position: fixed;
+                                width: calc(100vw - 20%);
+                                height: calc(100vh - 200px);
+                                padding: 100px 10%;
+                                display: flex;
+                                align-items: center;
+                                justify-content: space-around;
+                                z-index: -1;
+                                top: 0;
+                                left: 0;
+                            }
+                            
+                            
+                            #banner h1 {
+                                color: white;
+                                text-transform: capitalize;
+                                font-family: 'Pacifico',sans-serif;
+                                font-size: 50px;
+                                letter-spacing: 5px;
+                            }
+                            
+                            #banner-space {
+                                position: relative;
+                                width: 100vw;
+                                height: 100vh;
+                                z-index: -2;
+                            }
+                            
+                            #bg-banner-img {
+                                position: absolute;
+                                width: 120vw;
+                                height: 120vh;
+                                filter: brightness(0.2);
+                                object-fit: cover;
+                                z-index: -1;
+                            }
+                            
+                            #banner-img {
+                                width: 30vw;
+                                height: 30vw;
+                                object-fit: cover;
+                                border-radius: 50px;
+                                box-shadow: 3px 3px 25px rgba(0,0,0,0.6);
+                                margin-right: 50px;
+                            }
+                            
+                            @media (max-width: 1000px) {
+                                #banner {
+                                    flex-direction: column;
+                                    justify-content: center;
+                                }
+                                #banner-img {
+                                    width: 50vw;
+                                    height: 50vw;
+                                    margin: 0;
+                                }
+                            }
+                            
+                            .banner-btn {
+                                position: absolute;
+                                height: 80px;
+                                width: 80px;
+                                border-radius: 50%;
+                                padding: 0;
+                                margin: 0;
+                                transition: 0.2s ease-in-out;
+                                background-color: transparent;
+                                border: none;
+                                color: white;
+                                font-size: 30px;
+                                font-weight: 700;
+                                font-family: 'Sigmar One',sans-serif;
+                                z-index: 0;
+                            }
+                            
+                            .banner-btn:hover {
+                                background-color: rgba(255,255,255,0.2);
+                                box-shadow: 3px 3px 10px rgba(0,0,0,0.6);
+                                color:rgb(0, 195, 255);
+                            }
+                            
+                            #left-btn {
+                                left: 10px;
+                                content: "$lt;";
+                            }
+                            
+                            #right-btn {
+                                right: 10px;
+                                content: "$gt;";
+                            }
+                            
+                            #signature {
+                                position: absolute;
+                                right:10%;
+                                bottom: 5%;
+                            }
+                        </code></pre>
+                        <p class="description">
+                            <strong>JavaScript code: </strong>
+                        </p>
+                        <pre class="code"><code class="language-html">
+                            const header = document.getElementById("header")
+                            const main = document.getElementsByTagName("html")[0]
+                            
+                            var currentImg = 0;
+                            const bannerDir = "images/banner/"
+                            const bannerImgs = ["banner1.jpg","banner2.jpg","banner3.jpg"]
+                            const banner = document.getElementById("banner")
+                            const bannerBg = document.getElementById("bg-banner-img")
+                            const bannerImg = document.getElementById("banner-img")
+                            const bannerSlogan = document.getElementById("slogans")
+                            bannerBg.src = bannerDir + bannerImgs[currentImg]
+                            bannerImg.src = bannerDir + bannerImgs[currentImg]
+                            
+                            
+                            const introImgs = document.getElementById("intro-imgs")
+                            const imgIndexes = document.getElementById("img-indexes")
+                            const intros = ["https://static.wixstatic.com/media/83dd3c_802f17f659b64b7789c3215a66c2dfba~mv2_d_3744_5616_s_4_2.jpg/v1/crop/x_13,y_686,w_3718,h_4930/fill/w_198,h_266,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/CM_EWEB_SweetLife31%20copy.jpg"
+                                            ,"https://static.wixstatic.com/media/83dd3c_21998ee4b0b0434fbf239cf78bc687a0~mv2_d_2048_1536_s_2.jpg/v1/fill/w_215,h_154,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/cheryl%20and%20cath%20decorating.jpg"
+                                            ,]
+                            
+                            var currentIntroImg = 0;
+                            introImgs.src = intros[currentIntroImg]
+                            imgIndexes.innerHTML = ""
+                            for(var i = 0; i $lt; intros.length; i++) {
+                                imgIndexes.innerHTML += `
+                                                            $lt;label class='option-group' for='page-btn-${i}' id='label-${i}'$gt;
+                                                                $lt;input type='radio' id='page-btn-${i}' name='intro-indexes' onclick='changeIntroImg(${i},true)' ${i == currentIntroImg? 'checked':''}/$gt;
+                                                                $lt;span class='radio-checkmark'$gt;$lt;/span$gt;
+                                                            $lt;/label$gt;
+                                                        `
+                            }
+                            
+                            
+                            
+                            function changeIntroImg(i,auto) {
+                                currentIntroImg = i
+                                if(auto) {
+                                    introPaused = true
+                                }
+                                imgChange(introImgs, intros[currentIntroImg])
+                            }
+                            
+                            
+                            if(scrollY $lt; 10 ) {
+                                header.style.backgroundColor = "transparent"
+                                header.style.boxShadow = "none"
+                            } else {
+                                header.style.backgroundColor = "black"
+                            }
+                            addEventListener("scroll", () =$gt; {
+                                if(scrollY $lt; 10 ) {
+                                    header.style.backgroundColor = "transparent"
+                                    header.style.boxShadow = "none"
+                                } else {
+                                    header.style.backgroundColor = "black"
+                                    header.style.boxShadow = "0 3px 15px rgba(0,0,0,0.6)"
+                                }
+                            
+                                banner.style.top = -scrollY/5 + "px"
+                            
+                                bannerImg.style.opacity = 1/(scrollY/20+1)
+                                bannerSlogan.style.opacity = 1/(scrollY/20+1)
+                            })
+                            
+                            addEventListener("mousemove",()=$gt;{
+                                // console.log()
+                                bannerBg.style.marginLeft = "-50vw"
+                                bannerBg.style.marginTop = "-50vh"
+                                bannerBg.style.left = `calc(50% - ${window.event.clientX/10}px)`
+                                bannerBg.style.top = `calc(50% - ${window.event.clientY/10}px)`
+                            })
+                            
+                            var paused = false
+                            setInterval(()=$gt;{
+                                if(paused) {
+                                    paused = false
+                                } else {
+                                    nextImg(false)
+                                }
+                            }, 5000)
+                            
+                            
+                            function prevImg(auto) {
+                                if(currentImg == 0) {
+                                    currentImg = bannerImgs.length - 1
+                                } else {
+                                    currentImg --
+                                }
+                                if(auto) {
+                                    paused = true
+                                }
+                                imgChange(bannerBg, bannerDir + bannerImgs[currentImg],true)
+                                imgChange(bannerImg, bannerDir + bannerImgs[currentImg],false)
+                            }
+                            
+                            function nextImg(auto) {
+                                if(currentImg == bannerImgs.length - 1) {
+                                    currentImg = 0
+                                } else {
+                                    currentImg ++
+                                }
+                                if(auto) {
+                                    paused = true
+                                }
+                                imgChange(bannerBg, bannerDir + bannerImgs[currentImg],true)
+                                imgChange(bannerImg, bannerDir + bannerImgs[currentImg],false)
+                            }
+                            
+                            function imgChange(img, newImgDir, isBg) {
+                                img.style.transition = "filter 0.4s ease-in-out, transform 0.4s ease-in-out"
+                                img.style.filter = `brightness(0) 
+                                `
+                                if(isBg) img.style.transform = "scale(1.5)"
+                                setTimeout(()=$gt;{
+                                    img.src = newImgDir
+                                }, 400)
+                                setTimeout(()=$gt;{
+                                    if(isBg) img.style.transform = "scale(1)"
+                                    img.style.filter = `brightness(${isBg?'0.2':'1'})
+                                     `
+                                }, 400)
+                            }
+                        </code></pre>
+                    </div>
+                    <div class="feature-desc" id="fea2-content">
+                        <h2>Page transition effect</h2>
+                        <video controls>
+                            <source src="videos/transition.mp4" type="video/mp4"/>
+                            Your browser does not support video.
+                        </video>
+                        <p class="description">
+                            <strong>Feature description: </strong>
+                        </p>
+                        <ol>
+                            <li>A JavaScript snippet of code was presented on the top of every page to generate and control an empty div tag that occupies the whole screen.</li>
+                            <li>When the page load, the div is completely black. Then it becomes transparent after a few miliseconds and its z-index is set to -1.</li>
+                            <li>All the href properties of a tag in the website was replaced by a function to enable draken effect before tranfer the user to the destination page.</li>
+                        </ol>
+                        <p class="description">
+                            <strong>HTML code: </strong>
+                        </p>
+                        <pre class="code"><code class="language-html">
+                            $lt;!-- js code for fade-in effect when the page load --$gt;
+                            $lt;script src="js/fadeInEffect.js"$gt;$lt;/script$gt;
+
+                            
+                            $lt;nav id="nav"$gt;
+                                $lt;!-- use js function instead of href for $lt;a$gt;$lt;/a$gt; tag to make fade-out effect  --$gt;
+                                $lt;a class="nav-item active" onclick="fadeOutEffect('index.html')"$gt;home$lt;/a$gt;
+                                $lt;a class="nav-item" onclick="fadeOutEffect('register.html')"$gt;register$lt;/a$gt;
+                                $lt;a class="nav-item" onclick="fadeOutEffect('order.html')"$gt;order$lt;/a$gt;
+                                $lt;a class="nav-item" onclick="fadeOutEffect('features.html')"$gt;Features$lt;/a$gt;
+                            $lt;/nav$gt;
+                        </code></pre>
+                        <p class="description">
+                            <strong>JavaScript code: </strong>
+                        </p>
+                        <pre class="code"><code class="language-html">
+                            function fadeInEffect() {
+                                const overlay = document.createElement("div")
+                                overlay.id = "overlay"
+                                overlay.style.position = "fixed"
+                                overlay.style.backgroundColor = "black"
+                                overlay.style.transition = "background-color 0.2s ease-in-out"
+                                overlay.style.zIndex = "2000"
+                                overlay.style.width = "100vw"
+                                overlay.style.height = "100vh"
+                                overlay.style.top = "0"
+                                overlay.style.left = "0"
+                            
+                                document.body.appendChild(overlay)
+                            
+                                setTimeout(()=>{
+                                    overlay.style.backgroundColor = "transparent"
+                                },100)
+                                setTimeout(()=>{
+                                    overlay.style.zIndex = "-100"
+                                },300)
+                            }
+                            
+                            window.onload = fadeInEffect()
+
+                            function fadeOutEffect(link) {
+                                const overlay = document.getElementById("overlay")
+                                overlay.style.zIndex = "2000"
+                                setTimeout(()=>{
+                                    overlay.style.backgroundColor = "black"
+                                },100)
+                                setTimeout(()=>{
+                                    if(link) location.href = link
+                                },300)
+                            }
+
+                        </code></pre>
+                    </div>
+                    <div class="feature-desc" id="fea3-content">
+                        <h2>Responsive nav bar</h2>
+                        <video controls>
+                            <source src="videos/header.mp4" type="video/mp4"/>
+                            Your browser does not support video.
+                        </video>
+                        <p class="description">
+                            <strong>Feature description: </strong>
+                        </p>
+                        <ol>
+                            <li>When the screen width is under 1000px, a menu button will be displayed instead of the navigation bar.</li>
+                            <li>The button is the label for an input checkbox that was hidden. When the user click on the label, the checkbox will be checked.</li>
+                            <li>The nav bar was hidden behind the right edge of the screen. When the checkbox is checked, the nav bar will slide out from the right of the screen.</li>
+                        </ol>
+                        <p class="description">
+                            <strong>HTML code: </strong>
+                        </p>
+                        <pre class="code"><code class="language-html">
+                            $lt;div class="nav-container"$gt;
+                                $lt;label id='expand-btn' for='openclose'$gt;
+                                    $lt;img src='images/menu.svg' alt=''/$gt;
+                                $lt;/label$gt;
+                                $lt;input type='checkbox' name='openclose' id='openclose'/$gt;
+                                $lt;nav id="nav"$gt;
+                                    $lt;!-- use js function instead of href for $lt;a$gt;$lt;/a$gt; tag to make fade-out effect  --$gt;
+                                    $lt;a class="nav-item active" onclick="fadeOutEffect('index.html')"$gt;home$lt;/a$gt;
+                                    $lt;a class="nav-item" onclick="fadeOutEffect('register.html')"$gt;register$lt;/a$gt;
+                                    $lt;a class="nav-item" onclick="fadeOutEffect('order.html')"$gt;order$lt;/a$gt;
+                                    $lt;a class="nav-item" onclick="fadeOutEffect('features.html')"$gt;Features$lt;/a$gt;
+                                $lt;/nav$gt;
+                            $lt;/div$gt;
+                        </code></pre>
+                        <p class="description">
+                            <strong>CSS code: </strong>
+                        </p>
+                        <pre class="code"><code class="language-css">
+                            header nav {
+                                display: flex;
+                                height: 100%;
+                            }
+                            
+                            header nav a{
+                                height: 100%;
+                                padding: 0 20px;
+                                display: flex;
+                                align-items: center;
+                                justify-content: center;
+                                text-decoration: none;
+                                color: white;
+                                font-weight: 700;
+                                font-size: 25px;
+                                text-transform: capitalize;
+                                transition: 0.2s ease-in-out;
+                                cursor: pointer;
+                            }
+                            
+                            header nav a:hover {
+                                background-color: rgba(255,255,255,0.2);
+                                color: rgb(0, 195, 255);
+                            }
+                            
+                            .active {
+                                color: rgb(0, 195, 255);
+                            }
+                            
+                            nav {
+                                display: flex;
+                                flex-direction: row;
+                            }
+                            #expand-btn {
+                                height: 100%;
+                                padding: 0 20px;
+                                display: none;
+                                align-items: center;
+                                justify-content: center;
+                                text-decoration: none;
+                                color: white;
+                                font-weight: 700;
+                                font-size: 25px;
+                                text-transform: capitalize;
+                                transition: 0.2s ease-in-out;
+                                cursor: pointer;
+                            }
+                            
+                            #openclose {
+                                display: none;
+                                right: 0;
+                            }
+                            
+                            #expand-btn img {
+                                width: 30px;
+                            }
+                            
+                            @media (max-width: 1000px) {
+                                header nav {
+                                    position:absolute;
+                                    flex-direction: column;
+                                    height: calc(100vh - 100px);
+                                    padding-top: 100px;
+                                    width: 300px;
+                                    left: calc(100% + 30px);
+                                    top: 0;
+                                    background-color:  black;
+                                    transition: 0.2s ease-in-out;
+                                    z-index: 100;
+                                }
+                                #expand-btn {
+                                    display: flex;
+                                    position: relative;
+                                    z-index: 101;
+                                }
+                                #openclose:checked ~ nav {
+                                    left: calc(100% - 270px);
+                                    box-shadow: -3px 0px 15px rgba(0,0,0,0.6);
+                                }
+                                #openclose:checked ~ #expand-btn {
+                                    background-color: rgba(255,255,255, 0.1);
+                                }
+                            }
+                            
+                            #expand-btn:hover {
+                                background-color: rgba(255,255,255, 0.2);
+                            }
+                            
+                        </code></pre>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <span>©2023 by Hoang Minh Khue, all rights reserved.</span>
+        </footer>
+        <script src="js/features.js"></script>
+        <script src="js/fadeOutEffect.js"></script>
+        <script src="js/registerCheck.js"></script>
+    </body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>iCeee</title>
+        <link rel="icon" type="image/png" href="images/png/logo-only.png"/>
+        <meta charset="utf-8"/>
+        <meta name="author" content="Hoang Minh Khue"/>
+        <meta name="description" content="Icecream_shop ice cream iceee"/>
+        <meta name="source" content="https://www.sweetlifedesserts.com/"/>
+        <meta name="keyword" content="ice cream shop"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="css/style.css"/>
+    </head>
+    <body>
+        <!-- js code for fade-in effect when the page load -->
+        <script src="js/fadeInEffect.js"></script>
+        <header id="header">
+            <a id="logo">
+                <img src="images/png/logo-no-background.png" alt=""/>
+            </a>
+            <div class="nav-container">
+                <label id='expand-btn' for='openclose'>
+                    <img src='images/menu.svg' alt=''/>
+                </label>
+                <input type='checkbox' name='openclose' id='openclose'/>
+                <nav id="nav">
+                    <!-- use js function instead of href for <a></a> tag to make fade-out effect  -->
+                    <a class="nav-item" onclick="fadeOutEffect('index.html')">home</a>
+                    <a class="nav-item" onclick="fadeOutEffect('register.html')">register</a>
+                    <a class="nav-item active" onclick="fadeOutEffect('order.html')">order</a>
+                    <a class="nav-item" onclick="fadeOutEffect('features.html')">Features</a>
+                </nav>
+            </div>
+        </header>
+        <main>
+            <div id="order-container">
+                <!-- background div  -->
+                <div class="login-bg">
+                    <div>
+                        <h1>Ice Ice Ice Ice Ice Ice Ice Ice Ice Ice Ice Ice Ice Ice Ice Ice&nbsp;</h1>
+                    </div>
+                    <div>
+                        <h1>Creamyyy Iceeeee Creamyyy Iceeeee&nbsp;</h1>
+                    </div>
+                    <div>
+                        <h1>Lets go Icyyy Lets go Icyyy &nbsp;</h1>
+                    </div>
+                    <div>
+                        <h1>Creamyyy Iceeeee Creamyyy Iceeeee&nbsp;</h1>
+                    </div>
+                    <div>
+                        <h1>Ice Ice Ice Ice Ice Ice Ice Ice Ice Ice Ice Ice Ice Ice Ice Ice&nbsp;</h1>
+                    </div>
+                </div>
+                <h1 id="title">order</h1>
+                <!-- form submit if validated -->
+                <form id="order-form" method="POST" action="https://mercury.swin.edu.au/it000000/formtest.php" onsubmit=" 
+                 const result = validate()
+                 if(result) fadeOutEffect(null)
+                 return validate()" novalidate>
+                    <div id="inputs">
+                        <div id="order-left">
+                            <h2>Billing information</h2>
+                            <div id="order-type-label" class="other-group radio-group">
+                                <label><span><strong>Order type: </strong></span></label>
+                                <label class="option-group" for="delivery">Delivery
+                                    <input type="radio" id="delivery" name="order-type" value="delivery"/>
+                                    <span class="radio-checkmark"></span>
+                                </label>
+                                <label class="option-group" for="pickup">Pickup
+                                    <input type="radio" id="pickup" name="order-type" value="pickup"/>
+                                    <span class="radio-checkmark"></span>
+                                </label>
+                            </div>
+                            <p class="error" id="order-type-err"></p>
+                            <div class="text-inputs">
+                                <fieldset id="delivery-address-inputs" class="address-inputs">
+                                    <legend>Delivery address</legend>
+                                    <label id="delivery-address-label" for="delivery-address">
+                                        <span><strong>Delivery address: </strong></span>
+                                        <input type="text" name="delivery-address" id="delivery-address"/>
+                                    </label>
+                                    <p class="error" id="delivery-address-err"></p>
+                                    <label id="delivery-post-label" for="delivery-postcode">
+                                        <span><strong>Post code: </strong></span>
+                                        <input type="text" name="delivery-postcode" id="delivery-postcode"/>
+                                    </label>
+                                    <p class="error" id="delivery-postcode-err"></p>
+                                </fieldset>
+                                <fieldset id="billing-address-inputs" class="address-inputs">
+                                    <legend>Billing address</legend>
+                                    <label id="billing-address-label" for="billing-address">
+                                        <span><strong>Billing address: </strong></span>
+                                        <input type="text" name="billing-address" id="billing-address"/>
+                                    </label>
+                                    <p class="error" id="billing-address-err"></p>
+                                    <label id="billing-postcode-label" for="billing-postcode">
+                                        <span><strong>Post code: </strong></span>
+                                        <input type="text" name="billing-postcode" id="billing-postcode"/>
+                                    </label>
+                                    <p class="error" id="billing-postcode-err"></p>
+                                    <label id="same-addr-label" for="same-addr" class="option-group same-addr">Same as delivery address
+                                        <input type="checkbox" id="same-addr" name="same-addr" value="same-addr"/>
+                                        <span class="box-checkmark"></span>
+                                    </label>
+                                </fieldset>
+                                <label id="number-label" for="number">
+                                    <span><strong>Contact Number: </strong></span>
+                                    <input type="text" name="number" id="number"/>
+                                </label>
+                                <p class="error" id="number-err"></p>
+                                <label id="email-label" for="email">
+                                    <span><strong>Email for Receipt: </strong></span>
+                                    <input type="email" name="email" id="email"/>
+                                </label>
+                                <p class="error" id="email-err"></p>
+                                <div id="payment-method-label" class="other-group radio-group">
+                                    <label><span><strong>Payment method: </strong></span></label>
+                                    <label class="option-group" for="card">Card
+                                        <input type="radio" id="card" name="payment-method" value="card" >
+                                        <span class="radio-checkmark"></span>
+                                    </label>
+                                    <label class="option-group" for="cash">Cash
+                                        <input type="radio" id="cash" name="payment-method" value="cash"/>
+                                        <span class="radio-checkmark"></span>
+                                    </label>
+                                </div>
+                                <p class="error" id="payment-method-err"></p>
+                            </div>
+                        </div>
+                        
+                        <div id="order-right">
+                            <div id="card-details">
+                                <h2>Card Details</h2>
+                                <p class="error" id="card-type-err"></p>
+                                <div class="text-inputs">
+                                    <label id="card-type-label" for='card-type'>
+                                        <span><strong>Card Type: </strong></span>
+                                        <select id="card-type" name='card-type' required>
+                                            <option value="" hidden>Select</option>
+                                            <option value='visa'>VISA</option>
+                                            <option value='master'>Mastercard</option>
+                                            <option value='express'>American Express</option>
+                                        </select>
+                                    </label>
+                                    <label for='nameoncard'>
+                                        <span><strong>Name on Card: </strong></span>
+                                        <input type='text' name='nameoncard' id='nameoncard' required/>
+                                    </label>
+                                    <p class="error" id="nameoncard-err"></p>
+
+                                    <label for='cardnumber'>
+                                        <span><strong>Card number: </strong></span>
+                                        <input type='text' name='cardnumber' id='cardnumber' required/>
+                                    </label>
+                                    <p class="error" id="cardnumber-err"></p>
+
+                                    <label for='expiry'>
+                                        <span><strong>Expiry date: </strong></span>
+                                        <input type='text' name='expiry' id='expiry' required/>
+                                    </label>
+                                    <p class="error" id="expiry-err"></p>
+                                    
+                                    <label for='cvv'>
+                                        <span><strong>CVV: </strong></span>
+                                        <input type='text' name='cvv' id='cvv' required/>
+                                    </label>
+                                    <p class="error" id="cvv-err"></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <input id="submit-btn" type="submit" value="order"/>
+                </form>
+            </div>
+        </main>
+        <footer>
+            <span>©2023 by Hoang Minh Khue, all rights reserved.</span>
+        </footer>
+        <script src="js/fadeOutEffect.js"></script>
+        <script src="js/orderCheck.js"></script>
+    </body>
+</html>

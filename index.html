@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>iCeee</title>
+        <link rel="icon" type="image/png" href="images/png/logo-only.png"/>
+        <meta charset="utf-8"/>
+        <meta name="author" content="Hoang Minh Khue"/>
+        <meta name="description" content="Icecream_shop ice cream iceee"/>
+        <meta name="keyword" content="ice cream shop"/>
+        <meta name="source" content="https://www.sweetlifedesserts.com/"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="css/style.css"/>
+    </head>
+    <body>
+        <!-- js code for fade-in effect when the page load -->
+        <script src="js/fadeInEffect.js"></script>
+        <header id="header">
+            <a id="logo">
+                <img src="images/png/logo-no-background.png" alt=""/>
+            </a>
+            <div class="nav-container">
+                <label id='expand-btn' for='openclose'>
+                    <img src='images/menu.svg' alt=''/>
+                </label>
+                <input type='checkbox' name='openclose' id='openclose'/>
+                <nav id="nav">
+                    <!-- use js function instead of href for <a></a> tag to make fade-out effect  -->
+                    <a class="nav-item active" onclick="fadeOutEffect('index.html')">home</a>
+                    <a class="nav-item" onclick="fadeOutEffect('register.html')">register</a>
+                    <a class="nav-item" onclick="fadeOutEffect('order.html')">order</a>
+                    <a class="nav-item" onclick="fadeOutEffect('features.html')">Features</a>
+                </nav>
+            </div>
+        </header>
+        <main>
+            <div id="home-container">
+                <div id="banner-space"></div>   
+                <div id="banner">
+                    <!-- buttons to change banner images  -->
+                    <button class="banner-btn" id="left-btn" onclick="prevImg(true)">&lt;</button>
+                    <button class="banner-btn" id="right-btn" onclick="nextImg(true)">&gt;</button>
+                    <img src="images/banner/banner1.jpg" id="bg-banner-img" alt=""/>
+                    <img src="images/banner/banner1.jpg" id="banner-img" alt=""/>
+                    <div id="slogans">
+                        <h1>Your smile are as sweet as our ice cream &hearts;</h1>
+                        
+                    </div>
+                    <img id="signature" src="images/signature.png" alt=""/>
+                </div>
+                <div id="introduction">
+                    <h2>About Us</h2>
+                    <div id="intro-content">
+                        <div id="img-area">
+                            <div class="img-container">
+                                <img id="intro-imgs" src="https://static.wixstatic.com/media/83dd3c_802f17f659b64b7789c3215a66c2dfba~mv2_d_3744_5616_s_4_2.jpg/v1/crop/x_13,y_686,w_3718,h_4930/fill/w_198,h_266,al_c,q_80,usm_0.66_1.00_0.01,enc_auto/CM_EWEB_SweetLife31%20copy.jpg" alt=""/>
+                            </div>
+                            <!-- div to display images of "about us" section  -->
+                            <div id="img-indexes">
+    
+                            </div>
+                        </div>
+                        <p>
+                            Sisters Catherine and Cheryl Reinhart started Sweet Life Patisserie in 1993, creating wedding and birthday cakes in their converted-garage-bakery in the Whiteaker neighborhood of Eugene, Oregon. In 1999, they opened their bakery and pastry shop on Monroe Street. The bakery quickly outgrew the shop, and was moved nearby to a custom-built spacious kitchen in 2004. An extensive remodel of the shop into a cafe followed later that same year.
+
+                            ​<br/>
+                            
+                            Business stayed steady and sweet, and soon they opened up the "Petite" location in 2016, on East 19th street just a few blocks away from the University. Sweet Life Petite showcases a slightly smaller selection of the same delicious treats in a beautiful, jewel-box store. They are nestled between a local ice creamery and a new pizza place, and they happily serve students and University area residents alike!
+                            
+                            ​​<br/>
+                            
+                            These days, a team of bakers and decorators turn out pastries around the clock. Sweet Life's cakes, pastries and desserts are lovingly hand-made from scratch, using both traditional French and classic American recipes. The display cases are full of desserts, cakes, pies, tarts, cookies, ice cream and sweet and savory breakfast and lunch pastries. The bright and bustling atmosphere attracts gregarious customers who don't mind waiting shoulder to shoulder with other dessert fans on busy weekend nights. The adept baristas help guide people through the dazzling array of options. They will also make a fine latte or a pot of organic tea to go with dessert.
+                            
+                            ​​<br/>
+                            
+                            The sisters work daily behind the scenes, dreaming up fabulous desserts and other baked goods, and finding new ways to make their business more community-oriented and earth-friendly.
+                            
+                        ​</p>
+                    </div>
+                </div>
+                <div id="menu-container">
+                    <h2>Our Menu</h2>
+                    <div id="menu">
+                        <div id="menu-left" class="menu-side">
+                            <div class="menu-item">
+                                <img src="images/menu/menu1.jpg" alt=""/>
+                                <div class="item-info">
+                                    <h3>RAINBOW SUNDAE CONE</h3>
+                                    <p>Loved by its subjects. Empowered by its scope! Full to its brim. A maximum fill of dark, white and milk.</p>
+                                    <span class="price">$200.00</span>
+                                </div>
+                                <a class="add">+</a>
+                            </div>
+                            <div class="menu-item">
+                                <img src="images/menu/menu3.jpg" alt=""/>
+                                <div class="item-info">
+                                    <h3>CHERRY FUDGE BAR</h3>
+                                    <p>We make real, indulgent, full-flavored desserts in perfectly reasonable portions. Because we think you should have your cake and ice cream too.</p>
+                                    <span class="price">$140.00</span>
+                                </div>
+                                <a class="add">+</a>
+                            </div>
+                            <div class="menu-item">
+                                <img src="images/menu/menu4.jpg" alt=""/>
+                                <div class="item-info">
+                                    <h3>CARAMEL ICE CREAM</h3>
+                                    <p>Vanilla mixed with caramel flavour ice cream cone to brighten your day.</p>
+                                    <span class="price">$110.00</span>
+                                </div>
+                                <a class="add">+</a>
+                            </div>
+                            <div class="menu-item">
+                                <img src="images/menu/menu5.jpg" alt=""/>
+                                <div class="item-info">
+                                    <h3> COOKIE DIPPED SUNDAE</h3>
+                                    <p>To be transported to childhood, legs dangling from a chair. A glass of milk. A cookie mercilessly clutched! A dunk. Ahh, the memory.</p>
+                                    <span class="price">$130.00</span>
+                                </div>
+                                <a class="add">+</a>
+                            </div>
+                        </div>
+                        <div id="menu-right" class="menu-side">
+                            <div class="menu-item highlighted">
+                                <img src="images/menu/menu2-highlighted.jpg" alt=""/>
+                                <div class="item-info">
+                                    <h3>SUPER NUGGET SUNDAE</h3>
+                                    <p>The nugget. An obsession! A chunk of deliciousness we nearly doubled. A Super Nugget!</p>
+                                    <span class="price">$500.00</span>
+                                </div>
+                                <a class="add">+</a>
+                            </div>
+                            <div class="menu-item">
+                                <img src="images/menu/menu6.jpg" alt=""/>
+                                <div class="item-info">
+                                    <h3>CRUSHED IT! SUNDAE</h3>
+                                    <p>Ahh, the sensation of falling. A drop? Nay, but equal in its gravity. A crush. One lusts for a cookie dusting so delicate. So... tantalizing.</p>
+                                    <span class="price">$150.00</span>
+                                </div>
+                                <a class="add">+</a>
+                            </div>
+                            <div class="menu-item">
+                                <img src="images/menu/menu7.jpg" alt=""/>
+                                <div class="item-info">
+                                    <h3>BANANA SPLIT SUNDAE</h3>
+                                    <p>A banana split! You're immediately transported away to that favorite ice cream shoppe, from the moment it touches your righteous taste receptacles.</p>
+                                    <span class="price">$80.00</span>
+                                </div>
+                                <a class="add">+</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="addNtime">
+                    <h2>Addresses & Open Time</h2>
+                    <div id="addresses">
+                        <div class="address">
+                            <strong>Address 1: </strong><span>Hanoi, Vietnam</span>
+                        </div>
+                        <div class="address">
+                            <strong>Address 2: </strong><span>Ho Chi Minh city, Vietnam</span>
+                        </div>
+                        
+                        <div class="address">
+                            <strong>Hotline: </strong><span>+1 0123.456.789</span>
+                        </div>
+                    </div>
+                    <div id="time">
+                        <table class='info-table'>
+                            <tr>
+                                <th></th>
+                                <th>Monday to Friday</th>
+                                <th>Weekend</th>
+                            </tr>
+                            <tr class='table-row'>
+                                <th>Address 1</th>
+                                <td>7a.m to 5p.m</td>
+                                <td>7a.m to 12p.m</td>
+                            </tr>
+                            <tr class='table-row'>
+                                <th>Address 2</th>
+                                <td>7a.m to 5p.m</td>
+                                <td>1p.m to 5p.m</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <span>©2023 by Hoang Minh Khue, all rights reserved.</span>
+        </footer>
+        <!-- js code for banner animations -->
+        <script src="js/script.js"></script>
+        <!-- use fade-out effect  -->
+        <script src="js/fadeOutEffect.js"></script>
+    </body>
+</html>

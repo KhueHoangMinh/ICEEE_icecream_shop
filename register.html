@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>iCeee</title>
+        <link rel="icon" type="image/png" href="images/png/logo-only.png"/>
+        <meta charset="utf-8"/>
+        <meta name="author" content="Hoang Minh Khue"/>
+        <meta name="description" content="Icecream_shop ice cream iceee"/>
+        <meta name="source" content="https://www.sweetlifedesserts.com/"/>
+        <meta name="keyword" content="ice cream shop"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <link rel="stylesheet" href="css/style.css"/>
+    </head>
+    <body>
+        <!-- js code for fade-in effect when the page load -->
+        <script src="js/fadeInEffect.js"></script>
+        <header id="header">
+            <a id="logo">
+                <img src="images/png/logo-no-background.png" alt=""/>
+            </a>
+            <div class="nav-container">
+                <label id='expand-btn' for='openclose'>
+                    <img src='images/menu.svg' alt=''/>
+                </label>
+                <input type='checkbox' name='openclose' id='openclose'/>
+                <nav id="nav">
+                    <!-- use js function instead of href for <a></a> tag to make fade-out effect  -->
+                    <a class="nav-item" onclick="fadeOutEffect('index.html')">home</a>
+                    <a class="nav-item active" onclick="fadeOutEffect('register.html')">register</a>
+                    <a class="nav-item" onclick="fadeOutEffect('order.html')">order</a>
+                    <a class="nav-item" onclick="fadeOutEffect('features.html')">Features</a>
+                </nav>
+            </div>
+        </header>
+        <main>
+            <div id="register-container">
+                <div class="login-bg">
+                    <div>
+                        <h1>Ice Ice Ice Ice Ice Ice Ice Ice Ice Ice Ice Ice Ice Ice Ice Ice&nbsp;</h1>
+                    </div>
+                    <div>
+                        <h1>Creamyyy Iceeeee Creamyyy Iceeeee&nbsp;</h1>
+                    </div>
+                    <div>
+                        <h1>Lets go Icyyy Lets go Icyyy &nbsp;</h1>
+                    </div>
+                    <div>
+                        <h1>Creamyyy Iceeeee Creamyyy Iceeeee&nbsp;</h1>
+                    </div>
+                    <div>
+                        <h1>Ice Ice Ice Ice Ice Ice Ice Ice Ice Ice Ice Ice Ice Ice Ice Ice&nbsp;</h1>
+                    </div>
+                </div>
+                <h1 id="title">register</h1>
+                <form id="register-form" method="POST" action="https://mercury.swin.edu.au/it000000/formtest.php" onsubmit=" 
+                 const result = validate()
+                 if(result) fadeOutEffect(null)
+                 return validate()" novalidate>
+                    <div id="inputs">
+                        <div id="register-left">
+                            <div class="text-inputs">
+                                <label id="username-label" for="username">
+                                    <span><strong>username: </strong></span>
+                                    <input type="text" name="username" id="username"/>
+                                </label>
+                                <p class="error" id="username-err"></p>
+                                <label id="email-label" for="email">
+                                    <span><strong>email: </strong></span>
+                                    <input type="email" name="email" id="email"/>
+                                </label>
+                                <p class="error" id="email-err"></p>
+                                <label id="password-label" for="password">
+                                    <span><strong>password: </strong></span>
+                                    <input type="password" name="password" id="password"/>
+                                </label>
+                                <p class="error" id="password-err"></p>
+                                <label id="re-password-label" for="re-password">
+                                    <span><strong>retype password: </strong></span>
+                                    <input type="password" name="re-password" id="re-password"/>
+                                </label>
+                                <p class="error" id="re-password-err"></p>
+                            </div>
+                            
+                            <div id="gender-label" class="other-group radio-group">
+                                <label><span><strong>gender: </strong></span></label>
+                                <label class="option-group" for="gender-male">Male
+                                    <input type="radio" id="gender-male" name="gender" value="male" checked="checked"/>
+                                    <span class="radio-checkmark"></span>
+                                </label>
+                                <label class="option-group" for="gender-female">Female
+                                    <input type="radio" id="gender-female" name="gender" value="female"/>
+                                    <span class="radio-checkmark"></span>
+                                </label>
+                                <label class="option-group" for="gender-other">Other
+                                    <input type="radio" id="gender-other" name="gender" value="other"/>
+                                    <span class="radio-checkmark"></span>
+                                </label>
+                            </div>
+                            <p class="error" id="gender-err"></p>
+                        </div>
+                        <div id="register-right">
+                            <div id="type-label"  class="other-group box-group">
+                                <label><span><strong>preffered type of ice cream: </strong></span></label>
+                                <label for="cone" class="option-group">Cone Ice cream
+                                    <input type="checkbox" id="cone" name="cone" value="cone"/>
+                                    <span class="box-checkmark"></span>
+                                </label>
+                                <label for="cup" class="option-group">Cup Ice cream
+                                    <input type="checkbox" id="cup" name="cup" value="cup"/>
+                                    <span class="box-checkmark"></span>
+                                </label>
+                                <label for="pop" class="option-group">Popsicle
+                                    <input type="checkbox" id="pop" name="pop" value="pop"/>
+                                    <span class="box-checkmark"></span>
+                                </label>
+                            </div>
+                            <p class="error" id="type-err"></p>
+        
+                            <label id="flavour-label" for="flavour"><span><strong>favourite flavour: </strong></span>
+                                <select id="flavour" name="flavour">
+                                    <option value="" hidden>Select</option>
+                                    <option value="choco">Chocolate</option>
+                                    <option value="mint">Mint</option>
+                                    <option value="strawberry">Strawberry</option>
+                                    <option value="banana">Banananana</option>
+                                    <option value="matcha">Matcha</option>
+                                </select>
+                            </label>
+                            <p class="error" id="flavour-err"></p>
+                        </div>
+                    </div>
+                    <input id="submit-btn" type="submit" value="Register"/>
+                </form>
+            </div>
+        </main>
+        <footer>
+            <span>©2023 by Hoang Minh Khue, all rights reserved.</span>
+        </footer>
+        <script src="js/fadeOutEffect.js"></script>
+        <script src="js/registerCheck.js"></script>
+    </body>
+</html>
